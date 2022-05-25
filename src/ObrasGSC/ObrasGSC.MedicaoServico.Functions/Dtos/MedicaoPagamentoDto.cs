@@ -1,4 +1,4 @@
-﻿namespace ObrasGSC.MedicaoServico.Functions.Dtos
+﻿namespace GSCObras.MedicaoServico.Functions.Dtos
 {
     public class MedicaoPagamentoDto
     {

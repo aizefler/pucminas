@@ -1,6 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 
-namespace ObrasGSC.MedicaoServico.Infra.Data.Comum
+namespace GSCObras.MedicaoServico.Infra.Data.Comum
 {
     public class CosmosDbContainer : ICosmosDbContainer
     {

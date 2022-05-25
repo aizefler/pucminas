@@ -4,9 +4,9 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using ObrasGSC.MedicaoServico.Infra.Data.Comum;
+using GSCObras.MedicaoServico.Infra.Data.Comum;
 
-namespace ObrasGSC.MedicaoServico.Functions
+namespace GSCObras.MedicaoServico.Functions
 {
     public class DatabaseSeed
     {

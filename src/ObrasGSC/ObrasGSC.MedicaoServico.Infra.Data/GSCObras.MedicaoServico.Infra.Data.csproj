@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ObrasGSC.MedicaoServico.Core\ObrasGSC.MedicaoServico.Core.csproj" />
+    <ProjectReference Include="..\ObrasGSC.MedicaoServico.Core\GSCObras.MedicaoServico.Core.csproj" />
   </ItemGroup>
 
 </Project>

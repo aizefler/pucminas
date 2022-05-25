@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ObrasGSC.MedicaoServico.Core.Entidades
+namespace GSCObras.MedicaoServico.Core.Entidades
 {
     public abstract class EntidadeBase
     {

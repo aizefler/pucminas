@@ -1,6 +1,6 @@
-﻿using ObrasGSC.MedicaoServico.Core.Entidades;
+﻿using GSCObras.MedicaoServico.Core.Entidades;
 
-namespace ObrasGSC.MedicaoServico.Core.Repositorios
+namespace GSCObras.MedicaoServico.Core.Repositorios
 {
     public interface IMedicaoOrdemServicoRepositorio : IRepositorioBase<MedicaoOrdemServico>
     {

@@ -1,8 +1,8 @@
-﻿using ObrasGSC.MedicaoServico.Core.Entidades;
-using ObrasGSC.MedicaoServico.Core.Repositorios;
-using ObrasGSC.MedicaoServico.Infra.Data.Comum;
+﻿using GSCObras.MedicaoServico.Core.Entidades;
+using GSCObras.MedicaoServico.Core.Repositorios;
+using GSCObras.MedicaoServico.Infra.Data.Comum;
 
-namespace ObrasGSC.MedicaoServico.Infra.Data
+namespace GSCObras.MedicaoServico.Infra.Data
 {
     public class OrdemServicoRepositorio : RepositorioBase<OrdemServico>, IOrdemServicoRepositorio
     {

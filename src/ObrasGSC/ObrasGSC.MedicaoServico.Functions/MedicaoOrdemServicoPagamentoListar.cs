@@ -4,12 +4,12 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using ObrasGSC.MedicaoServico.Core.Repositorios;
+using GSCObras.MedicaoServico.Core.Repositorios;
 using AutoMapper;
-using ObrasGSC.MedicaoServico.Functions.Dtos;
+using GSCObras.MedicaoServico.Functions.Dtos;
 using System.Collections.Generic;
 
-namespace ObrasGSC.MedicaoServico.Functions
+namespace GSCObras.MedicaoServico.Functions
 {
     public class MedicaoOrdemServicoPagamentoListar
     {

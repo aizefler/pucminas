@@ -6,14 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using ObrasGSC.MedicaoServico.Core.Repositorios;
-using ObrasGSC.MedicaoServico.Infra.Data;
-using ObrasGSC.MedicaoServico.Infra.Data.Comum;
+using GSCObras.MedicaoServico.Core.Repositorios;
+using GSCObras.MedicaoServico.Infra.Data;
+using GSCObras.MedicaoServico.Infra.Data.Comum;
 using System.Collections.Generic;
 using System.IO;
 
-[assembly: FunctionsStartup(typeof(ObrasGSC.MedicaoServico.Functions.Startup))]
-namespace ObrasGSC.MedicaoServico.Functions
+[assembly: FunctionsStartup(typeof(GSCObras.MedicaoServico.Functions.Startup))]
+namespace GSCObras.MedicaoServico.Functions
 {
     public class Startup : FunctionsStartup
     {

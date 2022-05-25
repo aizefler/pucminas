@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace ObrasGSC.MedicaoServico.Infra.Data.Comum
+namespace GSCObras.MedicaoServico.Infra.Data.Comum
 {
     public static class IServiceCollectionExtensions
     {

@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace ObrasGSC.MedicaoServico.Core.Tests
+namespace GSCObras.MedicaoServico.Core.Tests
 {
     public class UnitTest1
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ObrasGSC.MedicaoServico.Functions.Properties {
+namespace GSCObras.MedicaoServico.Functions.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ObrasGSC.MedicaoServico.Functions.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ObrasGSC.MedicaoServico.Functions.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GSCObras.MedicaoServico.Functions.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

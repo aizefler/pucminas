@@ -7,9 +7,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using ObrasGSC.MedicaoServico.Core.Repositorios;
+using GSCObras.MedicaoServico.Core.Repositorios;
 
-namespace ObrasGSC.MedicaoServico.Functions
+namespace GSCObras.MedicaoServico.Functions
 {
     // https://levelup.gitconnected.com/event-driven-programming-in-c-9264efb06c01
 

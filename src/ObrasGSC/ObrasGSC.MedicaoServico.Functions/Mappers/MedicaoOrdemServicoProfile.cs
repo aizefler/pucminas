@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using ObrasGSC.MedicaoServico.Core.Entidades;
-using ObrasGSC.MedicaoServico.Functions.Dtos;
+using GSCObras.MedicaoServico.Core.Entidades;
+using GSCObras.MedicaoServico.Functions.Dtos;
 
 namespace AHS.Freshservice.Application.Mappers
 {

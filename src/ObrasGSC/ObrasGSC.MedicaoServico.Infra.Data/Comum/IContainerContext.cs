@@ -1,6 +1,6 @@
-﻿using ObrasGSC.MedicaoServico.Core.Entidades;
+﻿using GSCObras.MedicaoServico.Core.Entidades;
 
-namespace ObrasGSC.MedicaoServico.Infra.Data.Comum
+namespace GSCObras.MedicaoServico.Infra.Data.Comum
 {
     /// <summary>
     ///  Defines the container level context

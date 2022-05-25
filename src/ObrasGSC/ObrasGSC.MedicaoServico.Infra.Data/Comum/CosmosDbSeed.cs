@@ -1,7 +1,7 @@
-﻿using ObrasGSC.MedicaoServico.Core.Entidades;
-using ObrasGSC.MedicaoServico.Core.Repositorios;
+﻿using GSCObras.MedicaoServico.Core.Entidades;
+using GSCObras.MedicaoServico.Core.Repositorios;
 
-namespace ObrasGSC.MedicaoServico.Infra.Data.Comum
+namespace GSCObras.MedicaoServico.Infra.Data.Comum
 {
     public class CosmosDbSeed : ICosmosDbSeed
     {

@@ -9,19 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{1991C7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{999A30E6-BA9D-4F7D-A59A-26EF370190B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObrasGSC.MedicaoServico.Functions", "ObrasGSC.MedicaoServico.Functions\ObrasGSC.MedicaoServico.Functions.csproj", "{AD78863F-EEEF-493A-A806-4D62060E9509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.MedicaoServico.Functions", "ObrasGSC.MedicaoServico.Functions\GSCObras.MedicaoServico.Functions.csproj", "{AD78863F-EEEF-493A-A806-4D62060E9509}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObrasGSC.MedicaoServico.Core", "ObrasGSC.MedicaoServico.Core\ObrasGSC.MedicaoServico.Core.csproj", "{24108E35-D0AF-4A72-A485-C695C69F0FE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.MedicaoServico.Core", "ObrasGSC.MedicaoServico.Core\GSCObras.MedicaoServico.Core.csproj", "{24108E35-D0AF-4A72-A485-C695C69F0FE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObrasGSC.MedicaoServico.Core.Tests", "ObrasGSC.MedicaoServico.Core.Tests\ObrasGSC.MedicaoServico.Core.Tests.csproj", "{7F18A653-777A-45BC-AD90-61E67B11CFB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.MedicaoServico.Core.Tests", "ObrasGSC.MedicaoServico.Core.Tests\GSCObras.MedicaoServico.Core.Tests.csproj", "{7F18A653-777A-45BC-AD90-61E67B11CFB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObrasGSC.MedicaoServico.Infra.Data", "ObrasGSC.MedicaoServico.Infra.Data\ObrasGSC.MedicaoServico.Infra.Data.csproj", "{D1245958-8BA1-4E1C-8D63-464A063B9702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.MedicaoServico.Infra.Data", "ObrasGSC.MedicaoServico.Infra.Data\GSCObras.MedicaoServico.Infra.Data.csproj", "{D1245958-8BA1-4E1C-8D63-464A063B9702}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObrasGSC.MedicaoServico.Infra.Bus", "ObrasGSC.MedicaoServico.Infra.Bus\ObrasGSC.MedicaoServico.Infra.Bus.csproj", "{B96FF73E-C1F4-49B4-805D-360D7FF43DF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.MedicaoServico.Infra.Bus", "ObrasGSC.MedicaoServico.Infra.Bus\GSCObras.MedicaoServico.Infra.Bus.csproj", "{B96FF73E-C1F4-49B4-805D-360D7FF43DF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSCObras.Web", "GSCObras.UI.Web\GSCObras.Web.csproj", "{8E353620-E4ED-4FA4-908B-B1CCBC5A984C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.Web", "GSCObras.UI.Web\GSCObras.Web.csproj", "{8E353620-E4ED-4FA4-908B-B1CCBC5A984C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSCObras.Data.Services", "GSCObras.Data.Services\GSCObras.Data.Services.csproj", "{AB5BD8BF-38F1-4F45-8BB7-0F5328C02797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSCObras.Data.Services", "GSCObras.Data.Services\GSCObras.Data.Services.csproj", "{AB5BD8BF-38F1-4F45-8BB7-0F5328C02797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

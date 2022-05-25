@@ -1,4 +1,4 @@
-﻿namespace ObrasGSC.MedicaoServico.Core.Entidades
+﻿namespace GSCObras.MedicaoServico.Core.Entidades
 {
     public class Fornecedor : EntidadeBase
     {
