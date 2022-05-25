@@ -1,0 +1,67 @@
+[
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "nivel": "1",
+    "descricao": "Casa 001",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idServico": null,
+    "dataIncioPrevista": null,
+    "dataFimPrevista": null,
+    "dataIncioReal": null,
+    "dataFimReal": null,
+    "modificadoPor": "aizefler",
+    "modificadoEm": "20-03-2022"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "nivel": "1.1",
+    "descricao": "Serviços preliminares",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idServico": null,
+    "dataIncioPrevista": "",
+    "dataFimPrevista": "",
+    "dataIncioReal": "",
+    "dataFimReal": "",
+    "modificadoPor": "",
+    "modificadoEm": ""
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "nivel": "1.1.1",
+    "descricao": "Construção barracão de obra",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idServico": null,
+    "dataIncioPrevista": "",
+    "dataFimPrevista": "",
+    "dataIncioReal": "",
+    "dataFimReal": "",
+    "modificadoPor": "",
+    "modificadoEm": ""
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "nivel": "1.1.2",
+    "descricao": "Instalação dos tapumes",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idServico": null,
+    "dataIncioPrevista": "",
+    "dataFimPrevista": "",
+    "dataIncioReal": "",
+    "dataFimReal": "",
+    "modificadoPor": "",
+    "modificadoEm": ""
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "nivel": "1.1",
+    "descricao": "Serviços preliminares",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idServico": null,
+    "dataIncioPrevista": "",
+    "dataFimPrevista": "",
+    "dataIncioReal": "",
+    "dataFimReal": "",
+    "modificadoPor": "",
+    "modificadoEm": ""
+  }
+]

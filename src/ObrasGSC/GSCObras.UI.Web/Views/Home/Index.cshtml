@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Pagamentos";
+}
+
+    <h4>Pagamentos - <small>Medições de Serviços</small></h4>
+
+<div>
+                    <ejs-grid id="Grid" dataSource="@ViewBag.DataSource" allowPaging="true">                 
+                    <e-grid-columns>
+                        <e-grid-column field="Janela" headerText="Medição" textAlign="Center" width="100"></e-grid-column>
+                        <e-grid-column field="FornecedorCNPJ" headerText="Fornecedor CNPJ" textAlign="Center" width="120"></e-grid-column>
+                        <e-grid-column field="FornecedorNome"  headerText="Fornecedor" textAlign="Center" width="170"></e-grid-column>
+                        <e-grid-column field="Situacao" headerText="Situação" format="C2" textAlign="Center" width="80"></e-grid-column>
+                        <e-grid-column field="Valor" headerText="Valor" format="C2" width="80" textAlign="Center"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>    
+</div>

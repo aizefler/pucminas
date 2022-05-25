@@ -1,0 +1,26 @@
+[
+  {
+    "id": "OS-100100-1",
+    "idOS": "100100",
+    "idObra": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "janela": "2022-03",
+    "situacao": "aberta",
+    "items": [
+      {
+        "idItem": "10",
+        "servico": {
+          "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+          "idExterno": "100120",
+          "nome": "Pedreiro",
+          "categoria": "Mão de Obra",
+          "unidadeMedida": "HR"
+        },
+        "quantidade": 5.00
+      }
+    ],
+    "criadoPor": "aizefler",
+    "criadoEm": "2022-03-01",
+    "modificadoPor": "aizefler",
+    "modificadoEm": "2022-03-01"
+  }
+]

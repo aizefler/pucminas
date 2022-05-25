@@ -1,0 +1,35 @@
+[
+  {
+    "id": "OS-100100",
+    "situacao": "NÃO INICIADO",
+    "progresso": 0,
+    "criadoPor": "aizefler",
+    "criadoEm": "2022-03-01",
+    "obra": {
+      "id": "AA10",
+      "nome": "Condominio Golden Class"
+    },
+    "obraEAP": {
+      "id": "1.1",
+      "unidade": "CASA 001",
+      "descricao": "Muros de Arrimos",
+      "etapa": "FUNDAÇÃO",
+      "dataIncioPrevista": "2022-03-07",
+      "dataFimPrevista": "2022-03-17",
+      "dataIncioReal": null,
+      "dataFimReal": null
+    },
+    "fornecedor": {
+      "id": "100000",
+      "nome": "CD CONSTRUÇÕES LTDA",
+      "CNPJ": "94.136.111/0001-73"
+    },
+    "servico": {
+      "id": "1010",
+      "nome": "Muros de Arrimos",
+      "quantidade": 55.00,
+      "valor": 12000.00
+    }
+  }
+
+]

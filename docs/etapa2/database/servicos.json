@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100100",
+    "nome": "Muros de arrimos",
+    "categoria": "Muro Arrimo",
+    "unidadeMedida": "M2"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100110",
+    "nome": "Perfurações 30 diâmetro",
+    "categoria": "Fundação",
+    "unidadeMedida": "M3"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100110",
+    "nome": "Perfurações 40 diâmetro",
+    "categoria": "Fundação",
+    "unidadeMedida": "M3"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100120",
+    "nome": "Pedreiro",
+    "categoria": "Mão de Obra",
+    "unidadeMedida": "HR"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100120",
+    "nome": "Servente",
+    "categoria": "Mão de Obra",
+    "unidadeMedida": "HR"
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "100130",
+    "nome": "Impermeabilização Muros Arrimos",
+    "categoria": "Muro Arrimo",
+    "unidadeMedida": "HR"
+  }
+]

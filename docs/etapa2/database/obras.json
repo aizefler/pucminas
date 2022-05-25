@@ -1,0 +1,24 @@
+[
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2433C",
+    "idExterno": "AJ78",
+    "nome": "Condominio Golden Class",
+    "localizacao": {
+      "uf": "MG",
+      "cidade": "Lagoa Santa",
+      "endereco": "Flamboyant",
+      "cep": "33400000"
+    }
+  },
+  {
+    "id": "0CCF5080-A0B7-472E-A860-F9399BA2432C",
+    "idExterno": "AJ78",
+    "nome": "Condominio Boulevard",
+    "localizacao": {
+      "uf": "MG",
+      "cidade": "Lagoa Santa",
+      "endereco": "Rua Carlos Dias Ribeiro",
+      "cep": "33400000"
+    }
+  }
+]
