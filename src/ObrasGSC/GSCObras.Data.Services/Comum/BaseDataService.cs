@@ -12,12 +12,25 @@ namespace GSCObras.Data.Services.Comum
             ConfigToken = _configToken;
         }
 
-        public async virtual Task<T> GetHttp<T>(string pathSegment, string obraId)
+        public async virtual Task<T> GetHttp<T>(string pathSegment)
         {
             var accessToken = await ConfigToken.GetAccessToken();
             var results = await ConfigToken.ApimBaseUrl
                             .AppendPathSegment(pathSegment)
-                            .SetQueryParam("obraId", obraId)
+                            .WithHeader("Content-Type", "application/json")
+                            .SetQueryParams()
+                            .WithOAuthBearerToken(accessToken)
+                            .WithHeader("Ocp-Apim-Subscription-Key", ConfigToken.SubscriptionKey)
+                            .GetJsonAsync<T>();
+            return results;
+        }
+
+        public async virtual Task<T> GetHttp<T>(string pathSegment, object parameters)
+        {
+            var accessToken = await ConfigToken.GetAccessToken();
+            var results = await ConfigToken.ApimBaseUrl
+                            .AppendPathSegment(pathSegment)
+                            .SetQueryParams(parameters)
                             .WithHeader("Content-Type", "application/json")
                             .WithOAuthBearerToken(accessToken)
                             .WithHeader("Ocp-Apim-Subscription-Key", ConfigToken.SubscriptionKey)

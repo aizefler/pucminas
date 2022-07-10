@@ -11,7 +11,9 @@ namespace AHS.Freshservice.Application.Mappers
             CreateMap<MedicaoOrdemServicoPagamento, MedicaoPagamentoDto>()
                 .ForMember(d => d.Situacao, o => o.MapFrom(s => s.Situacao.ToString()))
                 .ForMember(d => d.FornecedorNome, o => o.MapFrom(s => s.Fornecedor.Descricao))
-                .ForMember(d => d.FornecedorCNPJ, o => o.MapFrom(s => s.Fornecedor.CNPJ)); 
+                .ForMember(d => d.FornecedorCNPJ, o => o.MapFrom(s => s.Fornecedor.CNPJ));
+
+            CreateMap<Obra, ObrasDto>();
         }
     }
 }

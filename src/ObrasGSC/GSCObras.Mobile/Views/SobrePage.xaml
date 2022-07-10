@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GSCObras.Mobile.Views.SobrePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:GSCObras.Mobile.Controls"
+    x:Name="AboutUsPage"
+    Title="About"
+    BackgroundColor="{DynamicResource Gray-Bg}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid
+            ColumnSpacing="0"
+            RowDefinitions="Auto,*"
+            RowSpacing="0">
+
+            <!--  Title View  -->
+            <controls:TitleView Title="About Us">
+                <controls:TitleView.LeadingView>
+                    <!--  Back button command  -->
+                    <buttons:SfButton
+                        x:Name="backButton"
+                        Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AboutUsPage}}"
+                        CommandParameter="{x:Reference backButton}"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Back}" />
+                </controls:TitleView.LeadingView>
+            </controls:TitleView>
+
+            <ScrollView
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Spacing="0"
+                    VerticalOptions="Center">
+
+                    <!--  Product image  -->
+                    <Image HeightRequest="110" WidthRequest="124">
+                        <Image.Source>
+                            <UriImageSource
+                                CacheValidity="14"
+                                CachingEnabled="true"
+                                Uri="{Binding ProductIcon}" />
+                        </Image.Source>
+                    </Image>
+
+                    <!--  Product version  -->
+                    <Label
+                        Margin="0,8.7,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Style="{StaticResource SimpleLabelStyle}"
+                        Text="{Binding ProductVersion, StringFormat='Version {0}'}"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Start" />
+
+                    <!--  Product title  -->
+                    <Label
+                        LineHeight="{OnPlatform Android=1.25,
+                                                Default=-1}"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Acme Products">
+                        <Label.Margin>
+                            <OnIdiom
+                                x:TypeArguments="Thickness"
+                                Default="0, 32, 0, 8"
+                                Phone="0, 16, 0, 16" />
+                        </Label.Margin>
+                    </Label>
+
+                    <!--  Product description  -->
+                    <Label
+                        Margin="15,0,15,0"
+                        Style="{StaticResource DescriptionLabelStyle}"
+                        Text="{Binding ProductDescription}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

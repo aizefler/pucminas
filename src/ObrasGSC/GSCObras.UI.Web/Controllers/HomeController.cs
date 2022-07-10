@@ -1,10 +1,12 @@
 ﻿using GSCObras.Data.Services;
 using GSCObras.Data.Services.Dtos;
 using GSCObras.UI.Web.Models;
-using GSCObras.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace GSCObras.UI.Web.Controllers
 {
@@ -21,14 +23,18 @@ namespace GSCObras.UI.Web.Controllers
         }
 
         public async Task<IActionResult> Index()
-        { 
-            var result = await _apimGSCObras.MedicaoPagamentoListarAsync("AA01");
-            ViewBag.DataSource = result;
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
+            _logger.LogDebug("Carregando página de pagamentos");
+
+            var obras = await CarregarObras();
+            ViewBag.DataSourceObras = obras;
+            ViewBag.ObraSelected = obras[0].Id;
+
+            var pagamentos = await CarregarPagamentos(ViewBag.ObraSelected);
+            ViewBag.DataSourcePagamentos = JsonConvert.SerializeObject(pagamentos, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
             return View();
         }
 
@@ -37,5 +43,22 @@ namespace GSCObras.UI.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task<List<ObrasDto>> CarregarObras()
+        {
+            _logger.LogDebug("Carregando a lista de obras");
+
+            var obras = await _apimGSCObras.ObrasListarAsync();
+            return obras;
+        }
+
+        public async Task<List<MedicaoPagamentoDto>> CarregarPagamentos([FromQuery] string obraId)
+        {
+            _logger.LogDebug("Carregando a lista de pagamentos");
+
+            var pagamentos = await _apimGSCObras.MedicaoPagamentoListarAsync(obraId);
+            return pagamentos;
+        }
+
     }
 }
