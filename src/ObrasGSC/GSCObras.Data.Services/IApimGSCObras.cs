@@ -6,5 +6,6 @@ namespace GSCObras.Data.Services
     {
         Task<List<MedicaoPagamentoDto>> MedicaoPagamentoListarAsync(string obraId);
         Task<List<ObrasDto>> ObrasListarAsync();
+        Task<MedicaoServicoEncerrarDto> MedicaoServicoEncerrarAsync(string obraId);
     }
 }

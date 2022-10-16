@@ -8,7 +8,6 @@
         
         public List<MedicaoOrdemServicoItem> Medicoes { get; set; }
 
-
         public void EncerrarJanela()
         {
             if (this.Situacao != "ABERTO")

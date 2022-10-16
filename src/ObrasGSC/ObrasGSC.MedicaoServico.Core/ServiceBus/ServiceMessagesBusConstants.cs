@@ -2,6 +2,6 @@
 {
     public static class ServiceMessagesBusConstants
     {
-        public const string NOTIFICATION_MAIL = "notification-mail";
+        public const string TOPIC_NOTIFICATIONS = "notifications";
     }
 }

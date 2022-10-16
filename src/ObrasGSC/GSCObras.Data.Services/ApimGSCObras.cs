@@ -1,4 +1,6 @@
-﻿using GSCObras.Data.Services.Comum;
+﻿using Flurl;
+using Flurl.Http;
+using GSCObras.Data.Services.Comum;
 using GSCObras.Data.Services.Dtos;
 
 namespace GSCObras.Data.Services
@@ -18,6 +20,16 @@ namespace GSCObras.Data.Services
         {
             return await GetHttp<List<ObrasDto>>($"{ApiPath}/Obras");
         }
-
+        public async Task<MedicaoServicoEncerrarDto> MedicaoServicoEncerrarAsync(string obraId)
+        {
+            var accessToken = await ConfigToken.GetAccessToken();
+            var results = await ConfigToken.ApimBaseUrl
+                            .AppendPathSegment($"{ApiPath}/{obraId}/encerrar")
+                            .WithHeader("Accept", "*/*")
+                            .WithOAuthBearerToken(accessToken)
+                            .WithHeader("Ocp-Apim-Subscription-Key", ConfigToken.SubscriptionKey)
+                            .PostAsync();
+            return await results.GetJsonAsync<MedicaoServicoEncerrarDto>();
+        }
     }
 }

@@ -4,6 +4,6 @@ namespace GSCObras.MedicaoServico.Core.Services
 {
     public interface IMedicaoOrdemServicoJanelasService
     {
-        Task<MedicaoOrdemServico> Encerrar(MedicaoOrdemServico medicao);
+        Task<MedicaoOrdemServico> Encerrar(string obrasId);
     }
 }

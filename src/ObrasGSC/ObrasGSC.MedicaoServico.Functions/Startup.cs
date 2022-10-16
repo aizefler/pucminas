@@ -11,6 +11,9 @@ using GSCObras.MedicaoServico.Infra.Data;
 using GSCObras.MedicaoServico.Infra.Data.Comum;
 using System.Collections.Generic;
 using System.IO;
+using GSCObras.MedicaoServico.Core.Services;
+using GSCObras.MedicaoServico.Infra.Bus;
+using GSCObras.MedicaoServico.Core.ServiceBus;
 
 [assembly: FunctionsStartup(typeof(GSCObras.MedicaoServico.Functions.Startup))]
 namespace GSCObras.MedicaoServico.Functions
@@ -30,6 +33,8 @@ namespace GSCObras.MedicaoServico.Functions
                                              configuration["CosmosDB_PrimaryKey"],
                                              configuration["CosmosDB_DatabaseName"],
                                              JsonConvert.DeserializeObject<List<ContainerInfo>>(configuration["CosmosDB_Containers"]));
+            builder.Services.AddScoped<IServiceMessagesBus, ServiceMessagesBus>();
+            builder.Services.AddScoped<IMedicaoOrdemServicoJanelasService, MedicaoOrdemServicoJanelasService>();
             builder.Services.AddScoped<IObraRepositorio, ObraRepositorio>();
             builder.Services.AddScoped<IMedicaoOrdemServicoPagamentoRepositorio, MedicaoOrdemServicoPagamentoRepositorio>();
             builder.Services.AddScoped<IMedicaoOrdemServicoRepositorio, MedicaoOrdemServicoRepositorio>();

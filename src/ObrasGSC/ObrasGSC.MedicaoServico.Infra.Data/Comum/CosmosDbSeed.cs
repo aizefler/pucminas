@@ -11,6 +11,7 @@ namespace GSCObras.MedicaoServico.Infra.Data.Comum
         private readonly IObraEAPRepositorio _obraEAPRepositorio;
         private readonly IOrdemServicoRepositorio _ordemServicoRepositorio;
         private readonly IMedicaoOrdemServicoPagamentoRepositorio _medicaoOrdemServicoPagamentoRepositorio;
+        private readonly IMedicaoOrdemServicoRepositorio _medicaoOrdemServicoRepositorio;
 
         private List<Obra> _obras;
         private List<Fornecedor> _fornecedores;
@@ -18,13 +19,15 @@ namespace GSCObras.MedicaoServico.Infra.Data.Comum
         private List<ObraEAP> _obrasEAP;
         private List<OrdemServico> _ordensServico;
         private List<MedicaoOrdemServicoPagamento> _medicaoOrdemServicoPagamento;
+        private List<MedicaoOrdemServico> _medicaoOrdemServico;
 
         public CosmosDbSeed(IObraRepositorio obraRepositorio,
                             IFornecedorRepositorio fornecedorRepositorio,
                             IServicoRepositorio servicoRepositorio,
                             IObraEAPRepositorio obraEAPRepositorio, 
                             IOrdemServicoRepositorio ordemServicoRepositorio,
-                            IMedicaoOrdemServicoPagamentoRepositorio medicaoOrdemServicoPagamentoRepositorio)
+                            IMedicaoOrdemServicoPagamentoRepositorio medicaoOrdemServicoPagamentoRepositorio,
+                            IMedicaoOrdemServicoRepositorio medicaoOrdemServicoRepositorio)
         {
             _obras = new List<Obra>();
             _fornecedores = new List<Fornecedor>();
@@ -32,6 +35,7 @@ namespace GSCObras.MedicaoServico.Infra.Data.Comum
             _obrasEAP = new List<ObraEAP>();
             _ordensServico = new List<OrdemServico>();
             _medicaoOrdemServicoPagamento = new List<MedicaoOrdemServicoPagamento>();
+            _medicaoOrdemServico = new List<MedicaoOrdemServico>();
 
             _obraRepositorio = obraRepositorio;
             _fornecedorRepositorio = fornecedorRepositorio;
@@ -39,6 +43,7 @@ namespace GSCObras.MedicaoServico.Infra.Data.Comum
             _obraEAPRepositorio = obraEAPRepositorio;
             _ordemServicoRepositorio = ordemServicoRepositorio;
             _medicaoOrdemServicoPagamentoRepositorio = medicaoOrdemServicoPagamentoRepositorio;
+            _medicaoOrdemServicoRepositorio = medicaoOrdemServicoRepositorio;
         }
 
         private async Task CarregarObras()
@@ -288,14 +293,31 @@ namespace GSCObras.MedicaoServico.Infra.Data.Comum
         }
 
 
-        public async Task CarregarDatabase()
+        private async Task CarregarMedicaoServico()
         {
-            await CarregarObras();
-            await CarregarServicos();
-            await CarregarFornecedores();
-            await CarregarObrasEAP();
-            await CarregarOrdensServico();
-            await CarregarPagamentos();
+            var medicao1 = new MedicaoOrdemServico()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Obra = new Obra()
+                {
+                    Id = "AA01",
+                    Descricao = "Residencial Golden Class"
+                },
+                Janela = "03/2022"
+            };
+            medicao1.AbrirJanela();
+            await _medicaoOrdemServicoRepositorio.AdicionarAsync(medicao1);
+        }
+
+            public async Task CarregarDatabase()
+        {
+            //await CarregarObras();
+            //await CarregarServicos();
+            //await CarregarFornecedores();
+            //await CarregarObrasEAP();
+            //await CarregarOrdensServico();
+            //await CarregarPagamentos();
+            //await CarregarMedicaoServico();
         }
     }
 }

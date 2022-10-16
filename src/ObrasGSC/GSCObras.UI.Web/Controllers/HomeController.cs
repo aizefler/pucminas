@@ -47,10 +47,11 @@ namespace GSCObras.UI.Web.Controllers
         public async Task<IActionResult> MedicaoEncerrar()
         {
             _logger.LogDebug("Carregando página de testes de encerramento de medição");
+            await _apimGSCObras.MedicaoServicoEncerrarAsync("AA01");
             return View();
         }
 
-            public async Task<List<ObrasDto>> CarregarObras()
+        public async Task<List<ObrasDto>> CarregarObras()
         {
             _logger.LogDebug("Carregando a lista de obras");
 
