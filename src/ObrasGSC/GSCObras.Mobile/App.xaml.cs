@@ -36,7 +36,7 @@ namespace GSCObras.Mobile
                             .WithIosKeychainSecurityGroup("com.microsoft.adalcache")
                             .Build();
 
-            MainPage = new Views.LoginPage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

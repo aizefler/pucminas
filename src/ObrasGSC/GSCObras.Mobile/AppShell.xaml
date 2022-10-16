@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GSCObras.Mobile.Views"
+             x:Class="GSCObras.Mobile.AppShell">
+
+    <Shell.FlyoutHeader>
+        <local:MenuHeaderView/>
+    </Shell.FlyoutHeader>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <FlyoutItem FlyoutItemIsVisible="True">
+        <Tab Title="OS">
+            <ShellContent Route="OrdemServico" Title="Ordens Serviços" ContentTemplate="{DataTemplate local:OrdensServicoPage}" />
+        </Tab>
+        <Tab Title="Medições">
+            <ShellContent Route="Medicoes" Title="Medições" ContentTemplate="{DataTemplate local:MedicoesPage}" />
+        </Tab>
+        <Tab Title="Pagamentos">
+            <ShellContent Route="Pagamentos" Title="Pagamentos" ContentTemplate="{DataTemplate local:PagamentosPage}" />
+        </Tab>
+        <Tab Title="Perfil">
+            <ShellContent Route="Perfil" Title="Perfil" ContentTemplate="{DataTemplate local:PerfilPage}" />
+        </Tab>
+
+
+    </FlyoutItem>
+
+    <MenuItem Text="Help"
+              
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
+    <MenuItem Text="Help"
+              
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
+    <MenuItem Text="Help"
+              
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
+
+</Shell>

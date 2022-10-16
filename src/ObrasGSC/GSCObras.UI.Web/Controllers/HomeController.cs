@@ -44,7 +44,13 @@ namespace GSCObras.UI.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<List<ObrasDto>> CarregarObras()
+        public async Task<IActionResult> MedicaoEncerrar()
+        {
+            _logger.LogDebug("Carregando página de testes de encerramento de medição");
+            return View();
+        }
+
+            public async Task<List<ObrasDto>> CarregarObras()
         {
             _logger.LogDebug("Carregando a lista de obras");
 

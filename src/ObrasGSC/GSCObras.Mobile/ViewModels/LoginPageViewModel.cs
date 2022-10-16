@@ -1,5 +1,10 @@
 ﻿using GSCObras.Mobile.Validators;
 using GSCObras.Mobile.Validators.Rules;
+using Microsoft.Identity.Client;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -11,11 +16,6 @@ namespace GSCObras.Mobile.ViewModels
     [Preserve(AllMembers = true)]
     public class LoginPageViewModel : LoginViewModel
     {
-        #region Fields
-
-        private ValidatableObject<string> password;
-
-        #endregion
 
         #region Constructor
 
@@ -24,37 +24,7 @@ namespace GSCObras.Mobile.ViewModels
         /// </summary>
         public LoginPageViewModel()
         {
-            this.InitializeProperties();
-            this.AddValidationRules();
             this.LoginCommand = new Command(this.LoginClicked);
-            this.SignUpCommand = new Command(this.SignUpClicked);
-            this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
-            this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
-        }
-
-        #endregion
-
-        #region property
-
-        /// <summary>
-        /// Gets or sets the property that is bound with an entry that gets the password from user in the login page.
-        /// </summary>
-        public ValidatableObject<string> Password
-        {
-            get
-            {
-                return this.password;
-            }
-
-            set
-            {
-                if (this.password == value)
-                {
-                    return;
-                }
-
-                this.SetProperty(ref this.password, value);
-            }
         }
 
         #endregion
@@ -66,91 +36,73 @@ namespace GSCObras.Mobile.ViewModels
         /// </summary>
         public Command LoginCommand { get; set; }
 
-        /// <summary>
-        /// Gets or sets the command that is executed when the Sign Up button is clicked.
-        /// </summary>
-        public Command SignUpCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets the command that is executed when the Forgot Password button is clicked.
-        /// </summary>
-        public Command ForgotPasswordCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets the command that is executed when the social media login button is clicked.
-        /// </summary>
-        public Command SocialMediaLoginCommand { get; set; }
-
         #endregion
 
         #region methods
 
         /// <summary>
-        /// Check the password is null or empty
-        /// </summary>
-        /// <returns>Returns the fields are valid or not</returns>
-        public bool AreFieldsValid()
-        {
-            bool isEmailValid = this.Email.Validate();
-            bool isPasswordValid = this.Password.Validate();
-            return isEmailValid && isPasswordValid;
-        }
-
-        /// <summary>
-        /// Initializing the properties.
-        /// </summary>
-        private void InitializeProperties()
-        {
-            this.Password = new ValidatableObject<string>();
-        }
-
-        /// <summary>
-        /// Validation rule for password
-        /// </summary>
-        private void AddValidationRules()
-        {
-            this.Password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password Required" });
-        }
-
-        /// <summary>
         /// Invoked when the Log In button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void LoginClicked(object obj)
+        private async void LoginClicked(object obj)
         {
-            if (this.AreFieldsValid())
+
+            AuthenticationResult authResult = null;
+            IEnumerable<IAccount> accounts = await App.PCA.GetAccountsAsync().ConfigureAwait(false);
+            try
             {
-                // Do Something
+                try
+                {
+                    IAccount firstAccount = accounts.FirstOrDefault();
+                    authResult = await App.PCA.AcquireTokenSilent(App.Scopes, firstAccount)
+                                          .ExecuteAsync()
+                                          .ConfigureAwait(false);
+                }
+                catch (MsalUiRequiredException)
+                {
+                    try
+                    {
+                        var builder = App.PCA.AcquireTokenInteractive(App.Scopes)
+                                                                   .WithParentActivityOrWindow(App.ParentWindow);
+
+                        // on Android and iOS, prefer to use the system browser, which does not exist on UWP
+                        SystemWebViewOptions systemWebViewOptions = new SystemWebViewOptions()
+                        {
+                            iOSHidePrivacyPrompt = true,
+                        };
+
+                        builder.WithSystemWebViewOptions(systemWebViewOptions);
+                        builder.WithUseEmbeddedWebView(false);
+
+                        authResult = await builder.ExecuteAsync().ConfigureAwait(false);
+                    }
+                    catch (Exception ex2)
+                    {
+                        //Device.BeginInvokeOnMainThread(async () =>
+                        //{
+                        //    await DisplayAlert("Acquire token interactive failed. See exception message for details: ", ex2.Message, "Dismiss");
+                        //});
+                    }
+                }
+
+                if (authResult != null)
+                {
+                    while (accounts.Any())
+                    {
+                        await App.PCA.RemoveAsync(accounts.FirstOrDefault()).ConfigureAwait(false);
+                        accounts = await App.PCA.GetAccountsAsync().ConfigureAwait(false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //Device.BeginInvokeOnMainThread(async () =>
+                //{
+                //    await DisplayAlert("Authentication failed. See exception message for details: ", ex.Message, "Dismiss");
+                //});
             }
         }
-
-        /// <summary>
-        /// Invoked when the Sign Up button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
-        {
-            // Do Something
-        }
-
-        /// <summary>
-        /// Invoked when the Forgot Password button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
-        private void ForgotPasswordClicked(object obj)
-        {
-            // Do something
-        }
-
-        /// <summary>
-        /// Invoked when social media login button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
-        private void SocialLoggedIn(object obj)
-        {
-            // Do something
-        }
+    }
 
         #endregion
-    }
 }

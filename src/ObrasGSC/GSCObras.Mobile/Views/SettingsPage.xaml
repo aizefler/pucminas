@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GSCObras.Mobile.Views.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:GSCObras.Mobile.Controls"
+    xmlns:viewModel="clr-namespace:GSCObras.Mobile.ViewModels"
+    x:Name="settings"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, *" RowSpacing="0">
+
+                <!--  Title View  -->
+                <controls:TitleView Title="Settings">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Command="{Binding BindingContext.BackButtonCommand, Source={x:Reference settings}}"
+                            CommandParameter="{x:Reference backButton}"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" />
+                    </controls:TitleView.LeadingView>
+                </controls:TitleView>
+
+                <BoxView
+                    Grid.Row="1"
+                    BackgroundColor="{DynamicResource Gray-100}"
+                    HeightRequest="16" />
+
+                <Grid
+                    Grid.Row="2"
+                    Padding="16,0"
+                    BackgroundColor="{DynamicResource Gray-Bg}">
+                    <Label
+                        FontFamily="Montserrat-Medium"
+                        HeightRequest="48"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Backup automatically"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+
+                    <buttons:SfSwitch
+                        AllowIndeterminateState="False"
+                        HeightRequest="30"
+                        HorizontalOptions="EndAndExpand"
+                        VisualType="Cupertino">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="On">
+                                    <VisualState.Setters>
+                                        <Setter Property="SwitchSettings">
+                                            <Setter.Value>
+                                                <buttons:CupertinoSwitchSettings
+                                                    x:TypeArguments="buttons:OnState"
+                                                    ThumbBorderColor="{DynamicResource Gray-White}"
+                                                    ThumbColor="{DynamicResource Gray-White}"
+                                                    TrackBorderColor="{DynamicResource Gray-200}"
+                                                    TrackColor="{DynamicResource PrimaryColor}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Off">
+                                    <VisualState.Setters>
+                                        <Setter Property="SwitchSettings">
+                                            <Setter.Value>
+                                                <buttons:CupertinoSwitchSettings
+                                                    x:TypeArguments="buttons:OffState"
+                                                    ThumbBorderColor="{DynamicResource Gray-300}"
+                                                    ThumbColor="{DynamicResource Gray-White}"
+                                                    TrackBorderColor="{DynamicResource Gray-300}"
+                                                    TrackColor="{DynamicResource Gray-300}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </buttons:SfSwitch>
+                </Grid>
+
+                <BoxView Grid.Row="3" Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <controls:TapAnimationGrid
+                    Grid.Row="4"
+                    Padding="16,0,4,0"
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    Command="{Binding BindingContext.DownloadCommand, Source={x:Reference settings}}"
+                    HeightRequest="48">
+                    <Label
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Download quality"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <buttons:SfButton
+                        Command="{Binding BindingContext.DownloadCommand, Source={x:Reference settings}}"
+                        FontSize="16"
+                        HorizontalOptions="End"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Next}" />
+                </controls:TapAnimationGrid>
+
+                <BoxView Grid.Row="5" Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <controls:TapAnimationGrid
+                    Grid.Row="6"
+                    Padding="16,0,4,0"
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    Command="{Binding BindingContext.ShowFilesCommand, Source={x:Reference settings}}"
+                    HeightRequest="48">
+                    <Label
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Show hidden files"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <buttons:SfButton
+                        Command="{Binding BindingContext.ShowFilesCommand, Source={x:Reference settings}}"
+                        FontSize="16"
+                        HorizontalOptions="End"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Next}" />
+                </controls:TapAnimationGrid>
+
+                <BoxView Grid.Row="7" Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <controls:TapAnimationGrid
+                    Grid.Row="8"
+                    Padding="16,0,4,0"
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    Command="{Binding BindingContext.PolicyCommand, Source={x:Reference settings}}"
+                    HeightRequest="48">
+                    <Label
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Privacy Policy"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <buttons:SfButton
+                        Command="{Binding BindingContext.PolicyCommand, Source={x:Reference settings}}"
+                        FontSize="16"
+                        HorizontalOptions="End"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Next}" />
+                </controls:TapAnimationGrid>
+
+                <!--  Separator  -->
+                <BoxView Grid.Row="9" Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <!--  Separator  -->
+                <BoxView
+                    Grid.Row="10"
+                    Style="{StaticResource HorizontalSeparatorStyle}"
+                    VerticalOptions="End" />
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

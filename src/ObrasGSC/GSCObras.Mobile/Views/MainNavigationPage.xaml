@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="GSCObras.Mobile.Views.MainNavigationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:GSCObras.Mobile.Views"
+    android:TabbedPage.BarItemColor="{DynamicResource Steel}"
+    android:TabbedPage.BarSelectedItemColor="{DynamicResource PrimaryColor}"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BackgroundColor="{DynamicResource Gray-Bg}"
+    BarBackgroundColor="{DynamicResource Gray-Bg}"
+    NavigationPage.HasNavigationBar="False">
+    <local:PhotosPage Title="Photos">
+        <local:PhotosPage.IconImageSource>
+            <FontImageSource
+                FontFamily="FontIcons"
+                Glyph="{StaticResource Photos}"
+                Size="16" />
+        </local:PhotosPage.IconImageSource>
+    </local:PhotosPage>
+    <local:AlbumPage Title="Album">
+        <local:AlbumPage.IconImageSource>
+            <FontImageSource
+                FontFamily="FontIcons"
+                Glyph="{StaticResource AlbumsIcon}"
+                Size="16" />
+        </local:AlbumPage.IconImageSource>
+    </local:AlbumPage>
+    <local:SettingsPage Title="Settings">
+        <local:SettingsPage.IconImageSource>
+            <FontImageSource
+                FontFamily="FontIcons"
+                Glyph="{StaticResource Settings}"
+                Size="16" />
+        </local:SettingsPage.IconImageSource>
+    </local:SettingsPage>
+</TabbedPage>
